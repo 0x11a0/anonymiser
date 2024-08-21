@@ -12,8 +12,8 @@ In many AI applications, it is critical to mask sensitive information without lo
 
 ### Prerequisites
 
-- **Java 17 or higher**
-- **Maven 3.6.3 or higher**
+- **Java 21 or higher**
+- **Maven 3.9.9 or higher**
 - **Spring Boot 3.0 or higher**
 - **PostgreSQL database** (optional for running in production)
 - **TLS/SSL certificates** for secure communication
