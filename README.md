@@ -53,6 +53,92 @@ In many AI applications, it is critical to mask sensitive information without lo
 
    The platform will be available at `https://localhost:8080`.
 
+
+## Docker Setup
+
+To run the Anonymiser app using Docker, follow these steps:
+
+### Prerequisites
+
+- Ensure that you have Docker installed on your machine. You can download it from [Docker's official website](https://www.docker.com/products/docker-desktop).
+
+### Steps to Build and Run the Docker Container
+
+1. **Clone the Repository**
+
+   If you haven't already, clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/lucasodra/anonymiser.git
+   cd anonymiser
+   ```
+
+2. **Build the Application JAR**
+
+   Ensure that the JAR file is built and available in the `target` directory. If it's not built yet, run the following Maven command:
+
+   ```bash
+   cd anonymiser-app
+   mvn clean install
+   ```
+
+3. **Build the Docker Image**
+
+   Use the following command to build the Docker image for the Anonymiser app:
+
+   ```bash
+   docker build -t anonymiser-app .
+   ```
+
+   This command will create a Docker image named `anonymiser-app` using the `Dockerfile` present in the repository.
+
+4. **Run the Docker Container**
+
+   Once the Docker image is built, you can run the application in a Docker container using the following command:
+
+   ```bash
+   docker run -d -p 8080:8080 --name anonymiser-container anonymiser-app
+   ```
+
+   This command will:
+   - Run the container in detached mode (`-d`).
+   - Map port 8080 on your host machine to port 8080 in the container (`-p 8080:8080`).
+   - Name the running container `anonymiser-container` (`--name anonymiser-container`).
+
+5. **Access the Application**
+
+   After the container is running, you can access the Anonymiser application by navigating to:
+
+   ```
+   http://localhost:8080
+   ```
+
+   Ensure that the application is running by checking the logs or simply accessing the endpoint.
+
+6. **Stopping the Container**
+
+   To stop the container, use the following command:
+
+   ```bash
+   docker stop anonymiser-container
+   ```
+
+7. **Removing the Container**
+
+   If you want to remove the container after stopping it, run:
+
+   ```bash
+   docker rm anonymiser-container
+   ```
+
+8. **Cleaning Up Docker Resources**
+
+   Optionally, you can remove the Docker image if you no longer need it:
+
+   ```bash
+   docker rmi anonymiser-app
+   ```
+
 ## High Level Architecture
 
 ```mermaid
