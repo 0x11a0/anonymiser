@@ -200,9 +200,6 @@ This platform adheres to the following industry-standard practices:
 
 This section outlines the steps that occur when an application sends data to the Anonymiser platform for anonymization, with accompanying JSON examples for each part of the process.
 
-Here is the updated segment:
-
----
 
 ### 1. **Data Submission**
    - **Input:** The application sends sensitive data to the Anonymiser platform via a RESTful API request.
